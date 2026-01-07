@@ -4,6 +4,8 @@ import { db } from "@/lib/db";
 import { contactSubmissions } from "@/db/schema";
 import { contactFormSchema } from "@/lib/validations/contact";
 import { getClientIP } from "@/lib/utils";
+import { Resend } from "resend";
+import { content } from "@/lib/content";
 
 // In-memory rate limiting (simple baseline)
 // Note: In production with multiple serverless instances, consider Redis
@@ -11,6 +13,13 @@ const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 
 const RATE_LIMIT_WINDOW = 15 * 60 * 1000; // 15 minutes
 const RATE_LIMIT_MAX = 5; // 5 requests per window
+
+// Initialize Resend (only if API key is provided)
+const resend = process.env.RESEND_API_KEY
+  ? new Resend(process.env.RESEND_API_KEY)
+  : null;
+
+const RECIPIENT_EMAIL = "dev.guzel@gmail.com";
 
 function checkRateLimit(ip: string | null): boolean {
   if (!ip) return true; // Allow if IP cannot be determined
@@ -41,7 +50,7 @@ export async function POST(request: NextRequest) {
     // Check honeypot
     if (validated.honeypot && validated.honeypot.length > 0) {
       return NextResponse.json(
-        { error: "Spam détecté" },
+        { error: "Spam detected" },
         { status: 400 }
       );
     }
@@ -50,7 +59,7 @@ export async function POST(request: NextRequest) {
     const ip = getClientIP(request.headers);
     if (!checkRateLimit(ip)) {
       return NextResponse.json(
-        { error: "Trop de requêtes. Veuillez réessayer plus tard." },
+        { error: "Too many requests. Please try again later." },
         { status: 429 }
       );
     }
@@ -69,21 +78,50 @@ export async function POST(request: NextRequest) {
       ip: ip || null,
     });
 
+    // Send email notification
+    if (resend) {
+      try {
+        const planLabel = validated.plan
+          ? content.services.plans.find((p) => p.id === validated.plan)?.name ||
+            validated.plan
+          : "Not specified";
+
+        await resend.emails.send({
+          from: process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev",
+          to: RECIPIENT_EMAIL,
+          subject: `New Contact Form Submission from ${validated.name}`,
+          html: `
+            <h2>New Contact Form Submission</h2>
+            <p><strong>Name:</strong> ${validated.name}</p>
+            <p><strong>Email:</strong> ${validated.email}</p>
+            <p><strong>Service:</strong> ${planLabel}</p>
+            <p><strong>Message:</strong></p>
+            <p>${validated.message.replace(/\n/g, "<br>")}</p>
+            <hr>
+            <p><small>Submitted from: ${ip || "Unknown IP"}</small></p>
+          `,
+        });
+      } catch (emailError) {
+        // Log email error but don't fail the request
+        console.error("Failed to send email notification:", emailError);
+      }
+    }
+
     return NextResponse.json(
-      { success: true, message: "Message envoyé avec succès" },
+      { success: true, message: "Message sent successfully" },
       { status: 200 }
     );
   } catch (error) {
     if (error instanceof ZodError) {
       return NextResponse.json(
-        { error: "Données invalides", details: error.errors },
+        { error: "Invalid data", details: error.errors },
         { status: 400 }
       );
     }
 
     console.error("Contact form error:", error);
     return NextResponse.json(
-      { error: "Une erreur est survenue" },
+      { error: "An error occurred" },
       { status: 500 }
     );
   }

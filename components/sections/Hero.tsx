@@ -15,7 +15,7 @@ export function Hero() {
           className="text-5xl md:text-7xl font-bold mb-4 text-text-primary"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
         >
           {content.hero.headline}
         </motion.h1>

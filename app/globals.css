@@ -3,48 +3,48 @@
 @tailwind utilities;
 
 :root {
-  /* Coolors Palette: #0a0908, #22333b, #eae0d5, #c6ac8f, #5e503f */
+  /* Coolors Palette: #0d1b2a, #1b263b, #415a77, #778da9, #e0e1dd */
   /* Semantic color variables */
-  --color-background: #eae0d5; /* Light beige - global background */
-  --color-surface: #c6ac8f; /* Tan - cards, sections, secondary panels */
-  --color-text-primary: #0a0908; /* Very dark - main text, headlines */
-  --color-text-secondary: #22333b; /* Dark blue-gray - subtitles, body text, muted */
-  --color-accent: #5e503f; /* Brown - buttons, links, icons, CTAs */
+  --color-background: #e0e1dd; /* Very light gray/off-white - global background */
+  --color-surface: #acb7c3; /* Light blue-gray - cards, sections, secondary panels */
+  --color-text-primary: #0d1b2a; /* Very dark blue - main text, headlines */
+  --color-text-secondary: #1b263b; /* Dark blue-gray - subtitles, body text, muted */
+  --color-accent: #415a77; /* Medium blue-gray - buttons, links, icons, CTAs */
   
   /* HSL values for Tailwind compatibility */
-  --background: 30 20% 88%; /* #eae0d5 */
-  --foreground: 0 0% 3%; /* #0a0908 */
-  --primary: 30 20% 35%; /* #5e503f */
-  --primary-foreground: 30 20% 88%; /* #eae0d5 */
-  --secondary: 30 25% 65%; /* #c6ac8f */
-  --secondary-foreground: 0 0% 3%; /* #0a0908 */
-  --accent: 30 20% 35%; /* #5e503f */
-  --accent-foreground: 30 20% 88%; /* #eae0d5 */
-  --muted: 30 25% 65%; /* #c6ac8f */
-  --muted-foreground: 210 25% 20%; /* #22333b */
-  --border: 30 15% 75%; /* Lighter tan for borders */
+  --background: 60 5% 88%; /* #e0e1dd */
+  --foreground: 210 40% 10%; /* #0d1b2a */
+  --primary: 210 30% 35%; /* #415a77 */
+  --primary-foreground: 60 5% 88%; /* #e0e1dd */
+  --secondary: 210 20% 70%; /* #acb7c3 */
+  --secondary-foreground: 210 40% 10%; /* #0d1b2a */
+  --accent: 210 30% 35%; /* #415a77 */
+  --accent-foreground: 60 5% 88%; /* #e0e1dd */
+  --muted: 210 20% 70%; /* #acb7c3 */
+  --muted-foreground: 210 35% 20%; /* #1b263b */
+  --border: 210 20% 65%; /* Light blue-gray for borders */
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 .dark {
-  /* Dark mode - inverted palette */
-  --color-background: #0a0908; /* Very dark - dark mode background */
-  --color-surface: #22333b; /* Dark blue-gray - dark mode surfaces */
-  --color-text-primary: #eae0d5; /* Light beige - dark mode text */
-  --color-text-secondary: #c6ac8f; /* Tan - dark mode secondary text */
-  --color-accent: #5e503f; /* Brown - accent stays same */
+  /* Dark mode - using darker blue tones */
+  --color-background: #0d1b2a; /* Very dark blue - dark mode background */
+  --color-surface: #1b263b; /* Dark blue-gray - dark mode surfaces */
+  --color-text-primary: #e0e1dd; /* Very light gray - dark mode text */
+  --color-text-secondary: #778da9; /* Light blue-gray - dark mode secondary text */
+  --color-accent: #415a77; /* Medium blue-gray - accent */
   
-  --background: 0 0% 3%; /* #0a0908 */
-  --foreground: 30 20% 88%; /* #eae0d5 */
-  --primary: 30 20% 35%; /* #5e503f */
-  --primary-foreground: 30 20% 88%; /* #eae0d5 */
-  --secondary: 210 25% 20%; /* #22333b */
-  --secondary-foreground: 30 20% 88%; /* #eae0d5 */
-  --accent: 30 20% 35%; /* #5e503f */
-  --accent-foreground: 30 20% 88%; /* #eae0d5 */
-  --muted: 210 25% 20%; /* #22333b */
-  --muted-foreground: 30 25% 65%; /* #c6ac8f */
-  --border: 210 25% 18%; /* Dark blue-gray for borders */
+  --background: 210 40% 10%; /* #0d1b2a */
+  --foreground: 60 5% 88%; /* #e0e1dd */
+  --primary: 210 30% 35%; /* #415a77 */
+  --primary-foreground: 60 5% 88%; /* #e0e1dd */
+  --secondary: 210 35% 20%; /* #1b263b */
+  --secondary-foreground: 60 5% 88%; /* #e0e1dd */
+  --accent: 210 30% 35%; /* #415a77 */
+  --accent-foreground: 60 5% 88%; /* #e0e1dd */
+  --muted: 210 35% 20%; /* #1b263b */
+  --muted-foreground: 210 25% 55%; /* #778da9 */
+  --border: 210 30% 25%; /* Dark blue-gray for borders */
 }
 
 * {
