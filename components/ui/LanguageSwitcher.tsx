@@ -8,7 +8,7 @@ import { useState } from "react";
 
 const languages: { code: Language; label: string; flag: string }[] = [
   { code: "en", label: "English", flag: "🇬🇧" },
-  { code: "fr", label: "Français", flag: "🇫🇷" },
+  { code: "fr", label: "Français", flag: "🇧🇪" },
   { code: "nl", label: "Nederlands", flag: "🇧🇪" },
 ];
 
@@ -16,7 +16,8 @@ export function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
 
-  const currentLang = languages.find((l) => l.code === language) || languages[0];
+  const currentLang =
+    languages.find((l) => l.code === language) || languages[0];
 
   return (
     <div className="relative">
@@ -28,7 +29,9 @@ export function LanguageSwitcher() {
         aria-label="Change language"
       >
         <Globe className="w-4 h-4" />
-        <span className="text-sm font-medium hidden sm:inline">{currentLang.flag}</span>
+        <span className="text-sm font-medium hidden sm:inline">
+          {currentLang.flag}
+        </span>
       </motion.button>
 
       {isOpen && (

@@ -53,9 +53,7 @@ export function Services() {
             <h2 className="text-4xl font-bold mb-4 text-text-primary">
               {t.services.title}
             </h2>
-            <p className="text-lg text-text-secondary">
-              {t.services.subtitle}
-            </p>
+            <p className="text-lg text-text-secondary">{t.services.subtitle}</p>
           </div>
 
           <div className="relative">
