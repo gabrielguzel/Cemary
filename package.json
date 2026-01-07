@@ -9,7 +9,7 @@
     "lint": "next lint",
     "db:generate": "drizzle-kit generate:pg",
     "db:migrate": "drizzle-kit migrate",
-    "db:push": "drizzle-kit push:pg",
+    "db:push": "NODE_TLS_REJECT_UNAUTHORIZED=0 drizzle-kit push:pg",
     "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
