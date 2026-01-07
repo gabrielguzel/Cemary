@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Coolors Palette: #0a0908, #22333b, #eae0d5, #c6ac8f, #5e503f */
+  /* Semantic color variables */
+  --color-background: #eae0d5; /* Light beige - global background */
+  --color-surface: #c6ac8f; /* Tan - cards, sections, secondary panels */
+  --color-text-primary: #0a0908; /* Very dark - main text, headlines */
+  --color-text-secondary: #22333b; /* Dark blue-gray - subtitles, body text, muted */
+  --color-accent: #5e503f; /* Brown - buttons, links, icons, CTAs */
+  
+  /* HSL values for Tailwind compatibility */
+  --background: 30 20% 88%; /* #eae0d5 */
+  --foreground: 0 0% 3%; /* #0a0908 */
+  --primary: 30 20% 35%; /* #5e503f */
+  --primary-foreground: 30 20% 88%; /* #eae0d5 */
+  --secondary: 30 25% 65%; /* #c6ac8f */
+  --secondary-foreground: 0 0% 3%; /* #0a0908 */
+  --accent: 30 20% 35%; /* #5e503f */
+  --accent-foreground: 30 20% 88%; /* #eae0d5 */
+  --muted: 30 25% 65%; /* #c6ac8f */
+  --muted-foreground: 210 25% 20%; /* #22333b */
+  --border: 30 15% 75%; /* Lighter tan for borders */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.dark {
+  /* Dark mode - inverted palette */
+  --color-background: #0a0908; /* Very dark - dark mode background */
+  --color-surface: #22333b; /* Dark blue-gray - dark mode surfaces */
+  --color-text-primary: #eae0d5; /* Light beige - dark mode text */
+  --color-text-secondary: #c6ac8f; /* Tan - dark mode secondary text */
+  --color-accent: #5e503f; /* Brown - accent stays same */
+  
+  --background: 0 0% 3%; /* #0a0908 */
+  --foreground: 30 20% 88%; /* #eae0d5 */
+  --primary: 30 20% 35%; /* #5e503f */
+  --primary-foreground: 30 20% 88%; /* #eae0d5 */
+  --secondary: 210 25% 20%; /* #22333b */
+  --secondary-foreground: 30 20% 88%; /* #eae0d5 */
+  --accent: 30 20% 35%; /* #5e503f */
+  --accent-foreground: 30 20% 88%; /* #eae0d5 */
+  --muted: 210 25% 20%; /* #22333b */
+  --muted-foreground: 30 25% 65%; /* #c6ac8f */
+  --border: 210 25% 18%; /* Dark blue-gray for borders */
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  color: var(--color-text-primary);
+  background: var(--color-background);
+  font-family: var(--font-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+[data-radix-accordion-content][data-state="open"] {
+  animation: slideDown 200ms ease-out;
+}
+
+[data-radix-accordion-content][data-state="closed"] {
+  animation: slideUp 200ms ease-out;
+}
