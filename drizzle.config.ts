@@ -6,7 +6,9 @@ import { resolve } from "path";
 config({ path: resolve(__dirname, ".env.local") });
 
 if (!process.env.POSTGRES_URL) {
-  throw new Error("POSTGRES_URL environment variable is not set. Make sure .env.local exists and contains POSTGRES_URL");
+  throw new Error(
+    "POSTGRES_URL environment variable is not set. Make sure .env.local exists and contains POSTGRES_URL"
+  );
 }
 
 export default {
