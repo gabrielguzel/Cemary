@@ -1,20 +1,24 @@
 "use client";
 
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
-import { content } from "@/lib/content";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 
 export function About() {
+  const { t } = useLanguage();
+
   return (
     <section id="about" className="py-20 px-4">
       <div className="max-w-4xl mx-auto">
         <AnimatedSection>
-          <h2 className="text-4xl font-bold mb-8 text-center text-text-primary">About</h2>
+          <h2 className="text-4xl font-bold mb-8 text-center text-text-primary">
+            {t.navigation.sections.find((s) => s.id === "about")?.label || "About"}
+          </h2>
           <p className="text-lg text-text-secondary mb-12 leading-relaxed">
-            {content.about.text}
+            {t.about.text}
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
-            {content.about.skills.map((skill, idx) => (
+            {t.about.skills.map((skill, idx) => (
               <motion.span
                 key={skill}
                 className="px-4 py-2 rounded-full bg-surface text-text-primary border border-accent/20 font-medium"

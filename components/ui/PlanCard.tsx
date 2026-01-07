@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Check, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface PlanCardProps {
   name: string;
@@ -27,6 +28,8 @@ export function PlanCard({
   isSelected = false,
   note,
 }: PlanCardProps) {
+  const { t, language } = useLanguage();
+  
   return (
     <motion.div
       className={cn(
@@ -47,7 +50,9 @@ export function PlanCard({
         </div>
 
         <div>
-          <h4 className="font-semibold mb-3 text-text-primary">Included:</h4>
+          <h4 className="font-semibold mb-3 text-text-primary">
+            {language === "en" ? "Included:" : language === "fr" ? "Inclus :" : "Inbegrepen:"}
+          </h4>
           <ul className="space-y-2">
             {included.map((item, idx) => (
               <li key={idx} className="flex items-start gap-2">
@@ -60,7 +65,9 @@ export function PlanCard({
 
         {notIncluded.length > 0 && (
           <div>
-            <h4 className="font-semibold mb-3 text-text-primary">Not included:</h4>
+            <h4 className="font-semibold mb-3 text-text-primary">
+              {language === "en" ? "Not included:" : language === "fr" ? "Non inclus :" : "Niet inbegrepen:"}
+            </h4>
             <ul className="space-y-2">
               {notIncluded.map((item, idx) => (
                 <li key={idx} className="flex items-start gap-2">
@@ -73,7 +80,10 @@ export function PlanCard({
         )}
 
         <div className="pt-4 border-t border-accent/30">
-          <p className="text-sm text-text-secondary mb-1">Timeline: {timeline}</p>
+          <p className="text-sm text-text-secondary mb-1">
+            {language === "en" ? "Timeline: " : language === "fr" ? "Délai : " : "Tijdlijn: "}
+            {timeline}
+          </p>
           <p className="text-lg font-semibold text-text-primary">{priceRange}</p>
         </div>
 
@@ -94,7 +104,7 @@ export function PlanCard({
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
-          Request a quote
+          {t.services.cta}
         </motion.button>
       </div>
     </motion.div>

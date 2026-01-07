@@ -2,13 +2,14 @@
 
 import { useState, useEffect } from "react";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
-import { content } from "@/lib/content";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { usePlan } from "@/contexts/PlanContext";
 import { contactFormSchema, type ContactFormData } from "@/lib/validations/contact";
 import { MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function Contact() {
+  const { t } = useLanguage();
   const { selectedPlan, clearPlan } = usePlan();
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
@@ -64,9 +65,9 @@ export function Contact() {
       <div className="max-w-3xl mx-auto">
         <AnimatedSection>
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 text-text-primary">{content.contact.title}</h2>
+            <h2 className="text-4xl font-bold mb-4 text-text-primary">{t.contact.title}</h2>
             <p className="text-lg text-text-secondary">
-              {content.contact.subtitle}
+              {t.contact.subtitle}
             </p>
           </div>
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -81,7 +82,7 @@ export function Contact() {
             />
             <div>
               <label htmlFor="name" className="block mb-2 font-medium text-text-primary">
-                {content.contact.form.name}
+                {t.contact.form.name}
               </label>
               <input
                 id="name"
@@ -94,7 +95,7 @@ export function Contact() {
             </div>
             <div>
               <label htmlFor="email" className="block mb-2 font-medium text-text-primary">
-                {content.contact.form.email}
+                {t.contact.form.email}
               </label>
               <input
                 id="email"
@@ -107,7 +108,7 @@ export function Contact() {
             </div>
             <div>
               <label htmlFor="plan" className="block mb-2 font-medium text-text-primary">
-                {content.contact.form.plan}
+                {t.contact.form.plan}
               </label>
               <select
                 id="plan"
@@ -120,19 +121,17 @@ export function Contact() {
                 }
                 className="w-full px-4 py-3 rounded-lg border border-accent/30 bg-background text-text-primary focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-colors"
               >
-                <option value="">{content.contact.form.planPlaceholder}</option>
-                <option value="advisory">IT Advisory & Audit</option>
-                <option value="website-essentials">Website Essentials</option>
-                <option value="website-configured">Website Plus (Configured Modules)</option>
-                <option value="custom-build">Custom Build (Fully Custom)</option>
-                <option value="retainer">Retainer / Technical Partner</option>
-                <option value="automation">Internal Tools & Process Support</option>
-                <option value="infrastructure">IT Infrastructure & Managed Support</option>
+                <option value="">{t.contact.form.planPlaceholder}</option>
+                {t.services.plans.map((plan) => (
+                  <option key={plan.id} value={plan.id}>
+                    {plan.name}
+                  </option>
+                ))}
               </select>
             </div>
             <div>
               <label htmlFor="message" className="block mb-2 font-medium text-text-primary">
-                {content.contact.form.message}
+                {t.contact.form.message}
               </label>
               <textarea
                 id="message"
@@ -151,8 +150,8 @@ export function Contact() {
               whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
             >
               {isSubmitting
-                ? content.contact.form.sending
-                : content.contact.form.submit}
+                ? t.contact.form.sending
+                : t.contact.form.submit}
             </motion.button>
             {submitStatus === "success" && (
               <motion.p
@@ -160,7 +159,7 @@ export function Contact() {
                 animate={{ opacity: 1 }}
                 className="text-center text-accent font-medium"
               >
-                {content.contact.form.success}
+                {t.contact.form.success}
               </motion.p>
             )}
             {submitStatus === "error" && (
@@ -169,14 +168,14 @@ export function Contact() {
                 animate={{ opacity: 1 }}
                 className="text-center text-accent font-medium"
               >
-                {content.contact.form.error}
+                {t.contact.form.error}
               </motion.p>
             )}
           </form>
           <div className="mt-12 text-center">
             <p className="flex items-center justify-center gap-2 text-text-secondary">
               <MapPin className="w-4 h-4" />
-              {content.contact.location}
+              {t.contact.location}
             </p>
           </div>
         </AnimatedSection>

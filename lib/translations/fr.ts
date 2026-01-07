@@ -1,0 +1,252 @@
+export const fr = {
+  hero: {
+    headline: "CEMARY — Conseil IT & Livraison Numérique",
+    role: "De la stratégie au logiciel fiable. Nous concevons, développons et maintenons des solutions numériques pragmatiques.",
+    primaryCta: "Découvrir les services",
+    secondaryCta: "Démarrer un projet",
+  },
+
+  about: {
+    text: `CEMARY est un cabinet de conseil IT basé en Belgique, spécialisé dans la livraison de solutions numériques fiables et maintenables. Nous aidons les organisations à structurer leurs systèmes, optimiser leurs opérations et transformer des exigences complexes en logiciels clairs et utilisables. Notre approche combine expertise technique, compréhension métier et exécution pragmatique.`,
+    skills: [
+      "Applications Web",
+      "Logiciels Métier",
+      "Architecture Système",
+      "Infrastructure IT",
+      "Optimisation des Processus",
+    ],
+  },
+
+  services: {
+    title: "Services",
+    subtitle: "Engagements flexibles adaptés à vos besoins",
+    plans: [
+      {
+        id: "advisory",
+        name: "Conseil IT & Audit",
+        description: "Analyse technique et orientation stratégique",
+        included: [
+          "Analyse des besoins et entretiens avec les parties prenantes",
+          "Révision des systèmes et outils existants",
+          "Identification des risques et goulots d'étranglement",
+          "Feuille de route d'amélioration actionnable",
+          "Rapport écrit et recommandations",
+        ],
+        notIncluded: ["Implémentation (optionnelle)"],
+        timeline: "1–3 semaines",
+        priceRange: "À partir de 1 500 €",
+      },
+      {
+        id: "website-essentials",
+        name: "Site Web Essentiel",
+        description: "Un site web statique propre et professionnel avec livraison définie",
+        included: [
+          "Découverte et définition de la structure (pages + navigation)",
+          "Design responsive et intégration du contenu",
+          "Configuration du formulaire de contact (si pertinent)",
+          "Fondamentaux de performance et SEO de base",
+          "Déploiement et remise",
+        ],
+        notIncluded: [
+          "Fonctionnalités métier personnalisées",
+          "Panneau d'administration / workflows de contenu avancés",
+          "Support continu (optionnel)",
+        ],
+        timeline: "1–3 semaines",
+        priceRange: "À partir de 1 200 €",
+      },
+      {
+        id: "website-configured",
+        name: "Site Web Plus (Modules Configurés)",
+        description: "Un site web avec fonctionnalités pré-configurées sélectionnées et édition admin",
+        included: [
+          "Portée Site Web Essentiel",
+          "Édition admin pour le contenu (actualités/pages) si pertinent",
+          "Modules pré-configurés (ex. événements, calendrier, formulaires, annonces)",
+          "Configuration et style alignés avec votre marque",
+          "Documentation et remise",
+        ],
+        notIncluded: [
+          "Développement de fonctionnalités entièrement personnalisées au-delà des modules sélectionnés",
+          "Intégrations complexes (optionnelles)",
+          "Support continu (optionnel)",
+        ],
+        timeline: "2–6 semaines",
+        priceRange: "À partir de 2 500 €",
+      },
+      {
+        id: "custom-build",
+        name: "Développement Sur Mesure",
+        description: "Applications web sur mesure et fonctionnalités personnalisées construites selon vos exigences",
+        included: [
+          "Logique métier adaptée à vos opérations",
+          "Gestion des utilisateurs et des données",
+          "Workflows opérationnels personnalisés (y compris reporting si pertinent)",
+          "Intégrations et automatisation si nécessaire",
+          "Contrôle qualité (tests et révision)",
+          "Documentation et remise technique",
+        ],
+        notIncluded: [
+          "Portée non définie ou en changement continu (utiliser Retainer à la place)",
+          "Support à long terme (optionnel ou via Retainer)",
+        ],
+        timeline: "4–12+ semaines",
+        priceRange: "Devis personnalisé",
+      },
+      {
+        id: "retainer",
+        name: "Retainer / Partenaire Technique",
+        description: "Livraison continue avec cadence mensuelle et réponse prioritaire",
+        included: [
+          "Cadence de livraison mensuelle (fonctionnalités, améliorations, corrections)",
+          "Support roadmap et priorisation",
+          "Monitoring et support opérationnel (léger)",
+          "Temps de réponse définis",
+          "Amélioration continue",
+        ],
+        notIncluded: ["Reconstructions ponctuelles importantes sans planification"],
+        timeline: "Mensuel",
+        priceRange: "Retainer personnalisé",
+      },
+      {
+        id: "automation",
+        name: "Outils Internes & Support Processus",
+        description: "Réduire le travail manuel et les frictions opérationnelles",
+        included: [
+          "Analyse des processus",
+          "Outils internes personnalisés",
+          "Automatisation et optimisation des workflows",
+          "Suivi et reporting (si pertinent)",
+        ],
+        notIncluded: ["Livraison continue de fonctionnalités (utiliser Retainer à la place)"],
+        timeline: "2–8 semaines",
+        priceRange: "À partir de 2 000 €",
+      },
+      {
+        id: "infrastructure",
+        name: "Infrastructure IT & Support Géré",
+        description: "Conception, installation et support d'environnements IT complets",
+        included: [
+          "Évaluation et dimensionnement de l'infrastructure",
+          "Configuration de l'environnement IT (appareils, comptes, permissions, connectivité)",
+          "Configuration réseau et accès sécurisé (si pertinent)",
+          "Documentation et remise",
+        ],
+        notIncluded: [],
+        timeline: "Installation + support continu optionnel",
+        priceRange: "Devis personnalisé",
+        note: "Options de support : (1) Support géré mensuel avec aide à distance + interventions sur site et maintenance préventive, ou (2) Installation à prix fixe avec une fenêtre post-installation limitée incluse, puis facturation horaire pour les interventions.",
+      },
+    ],
+    cta: "Demander un devis",
+    customNote: "Les prix sont basés sur la portée et la complexité. Un devis détaillé est fourni après une session de découverte initiale.",
+  },
+
+  work: {
+    title: "Réalisations",
+    subtitle: "Projets et missions représentatifs",
+    projects: [
+      {
+        id: 1,
+        title: "Plateforme de Gestion de Membres & Événements",
+        description: "Plateforme web personnalisée pour gérer les membres, événements, abonnements et workflows administratifs. Centralise les opérations et améliore la visibilité dans l'organisation.",
+        tags: ["Gestion de Membres", "Événements", "Opérations"],
+      },
+      {
+        id: 2,
+        title: "Site E-commerce",
+        description: "Livraison complète d'une boutique en ligne incluant catalogue produits, administration de contenu et flux d'achat si pertinent.",
+        tags: ["E-commerce", "Vente en Ligne", "Gestion de Contenu"],
+      },
+      {
+        id: 3,
+        title: "Application Web Opérationnelle",
+        description: "Application web métier pour gérer les clients, installations, workflows opérationnels et contenu de site web éditable. Conçue pour être entièrement utilisable par du personnel non technique sans toucher au code.",
+        tags: ["Application Métier", "Opérations", "CMS"],
+      },
+      {
+        id: 4,
+        title: "Outil de Suivi & Reporting de Services",
+        description: "Application interne pour suivre les services et activités opérationnelles, remplaçant les processus manuels et tableurs par des données structurées et de la visibilité.",
+        tags: ["Outils Internes", "Suivi Processus", "Reporting"],
+      },
+      {
+        id: 5,
+        title: "Conception & Support Infrastructure IT",
+        description: "Conception et déploiement d'une infrastructure IT complète, incluant postes de travail, serveurs, périphériques, connectivité sécurisée et support continu.",
+        tags: ["Infrastructure IT", "Support", "Maintenance", "Sécurité"],
+      },
+      {
+        id: 6,
+        title: "Digitalisation & Conseil Processus",
+        description: "Mission de conseil axée sur l'analyse des opérations terrain, la révision des outils existants et la définition d'une solution numérique pour réduire les pertes de temps et améliorer l'efficacité.",
+        tags: ["Conseil", "Optimisation Processus", "Digitalisation"],
+      },
+    ],
+  },
+
+  process: {
+    title: "Processus",
+    subtitle: "Comment nous travaillons",
+    steps: [
+      {
+        id: 1,
+        name: "Découverte",
+        description: "Comprendre vos besoins, contraintes et contexte opérationnel",
+        icon: "Search",
+      },
+      {
+        id: 2,
+        name: "Conception",
+        description: "Définir l'approche technique et fonctionnelle",
+        icon: "Layout",
+      },
+      {
+        id: 3,
+        name: "Développement",
+        description: "Implémentation avec livraison structurée et contrôle qualité",
+        icon: "Code",
+      },
+      {
+        id: 4,
+        name: "Livraison",
+        description: "Déploiement, documentation et remise",
+        icon: "Rocket",
+      },
+      {
+        id: 5,
+        name: "Support",
+        description: "Maintenance, monitoring et amélioration continue",
+        icon: "LifeBuoy",
+      },
+    ],
+  },
+
+  contact: {
+    title: "Contact",
+    subtitle: "Discutons de votre projet",
+    form: {
+      name: "Nom",
+      email: "Email",
+      message: "Message",
+      plan: "Service",
+      planPlaceholder: "Sélectionner un service (optionnel)",
+      submit: "Envoyer",
+      sending: "Envoi en cours...",
+      success: "Message envoyé avec succès.",
+      error: "Une erreur est survenue. Veuillez réessayer.",
+    },
+    location: "Basé en Belgique",
+  },
+
+  navigation: {
+    sections: [
+      { id: "hero", label: "Accueil" },
+      { id: "about", label: "À propos" },
+      { id: "services", label: "Services" },
+      { id: "work", label: "Réalisations" },
+      { id: "process", label: "Processus" },
+      { id: "contact", label: "Contact" },
+    ],
+  },
+} as const;

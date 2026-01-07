@@ -1,0 +1,252 @@
+export const en = {
+  hero: {
+    headline: "CEMARY — IT Consulting & Digital Delivery",
+    role: "From strategy to reliable software. We design, build, and support pragmatic digital solutions.",
+    primaryCta: "Explore services",
+    secondaryCta: "Start a project",
+  },
+
+  about: {
+    text: `CEMARY is a Belgium-based IT consulting firm focused on delivering reliable and maintainable digital solutions. We help organizations structure their systems, streamline operations, and turn complex requirements into clear, usable software. Our approach combines technical expertise, business understanding, and pragmatic execution.`,
+    skills: [
+      "Web Applications",
+      "Business Software",
+      "System Architecture",
+      "IT Infrastructure",
+      "Process Optimization",
+    ],
+  },
+
+  services: {
+    title: "Services",
+    subtitle: "Flexible engagements adapted to your needs",
+    plans: [
+      {
+        id: "advisory",
+        name: "IT Advisory & Audit",
+        description: "Technical analysis and strategic guidance",
+        included: [
+          "Needs analysis and stakeholder interviews",
+          "Review of existing systems and tools",
+          "Risk and bottleneck identification",
+          "Actionable improvement roadmap",
+          "Written report and recommendations",
+        ],
+        notIncluded: ["Implementation (optional)"],
+        timeline: "1–3 weeks",
+        priceRange: "From €1,500",
+      },
+      {
+        id: "website-essentials",
+        name: "Website Essentials",
+        description: "A clean, professional static website with a scoped delivery",
+        included: [
+          "Discovery and structure definition (pages + navigation)",
+          "Responsive design and content integration",
+          "Contact form setup (where relevant)",
+          "Basic performance and SEO fundamentals",
+          "Deployment and handover",
+        ],
+        notIncluded: [
+          "Custom business features",
+          "Admin panel / advanced content workflows",
+          "Ongoing support (optional)",
+        ],
+        timeline: "1–3 weeks",
+        priceRange: "From €1,200",
+      },
+      {
+        id: "website-configured",
+        name: "Website Plus (Configured Modules)",
+        description: "A website with selected pre-configured features and admin editing",
+        included: [
+          "Website Essentials scope",
+          "Admin editing for content (news/pages) where relevant",
+          "Pre-configured modules (e.g., events, calendar, forms, announcements)",
+          "Configuration and styling aligned with your brand",
+          "Documentation and handover",
+        ],
+        notIncluded: [
+          "Fully custom feature development beyond selected modules",
+          "Complex integrations (optional)",
+          "Ongoing support (optional)",
+        ],
+        timeline: "2–6 weeks",
+        priceRange: "From €2,500",
+      },
+      {
+        id: "custom-build",
+        name: "Custom Build (Fully Custom)",
+        description: "Tailored web applications and custom features built to your requirements",
+        included: [
+          "Business logic tailored to your operations",
+          "User and data management",
+          "Custom operational workflows (including reporting where relevant)",
+          "Integrations and automation where needed",
+          "Quality control (testing and review)",
+          "Documentation and technical handover",
+        ],
+        notIncluded: [
+          "Undefined or continuously changing scope (use Retainer instead)",
+          "Long-term support (optional or via Retainer)",
+        ],
+        timeline: "4–12+ weeks",
+        priceRange: "Custom quote",
+      },
+      {
+        id: "retainer",
+        name: "Retainer / Technical Partner",
+        description: "Ongoing delivery with a monthly cadence and prioritized response",
+        included: [
+          "Monthly delivery cadence (features, improvements, fixes)",
+          "Roadmap and prioritization support",
+          "Monitoring and operational support (light)",
+          "Defined response times",
+          "Continuous improvement",
+        ],
+        notIncluded: ["Large one-off rebuilds without planning"],
+        timeline: "Monthly",
+        priceRange: "Custom retainer",
+      },
+      {
+        id: "automation",
+        name: "Internal Tools & Process Support",
+        description: "Reduce manual work and operational friction",
+        included: [
+          "Process analysis",
+          "Custom internal tools",
+          "Workflow automation and optimization",
+          "Tracking and reporting (where relevant)",
+        ],
+        notIncluded: ["Ongoing feature delivery (use Retainer instead)"],
+        timeline: "2–8 weeks",
+        priceRange: "From €2,000",
+      },
+      {
+        id: "infrastructure",
+        name: "IT Infrastructure & Managed Support",
+        description: "Design, installation, and support of complete IT environments",
+        included: [
+          "Infrastructure assessment and sizing",
+          "IT environment setup (devices, accounts, permissions, connectivity)",
+          "Network configuration and secure access (where relevant)",
+          "Documentation and handover",
+        ],
+        notIncluded: [],
+        timeline: "Installation + optional ongoing support",
+        priceRange: "Custom quote",
+        note: "Support options: (1) Monthly managed support with remote help + on-site interventions and preventive maintenance, or (2) Fixed-price installation with a limited post-installation window included, then hourly billing for interventions.",
+      },
+    ],
+    cta: "Request a quote",
+    customNote: "Pricing is based on scope and complexity. A detailed quote is provided after an initial discovery session.",
+  },
+
+  work: {
+    title: "Work",
+    subtitle: "Representative projects and engagements",
+    projects: [
+      {
+        id: 1,
+        title: "Membership & Event Management Platform",
+        description: "Custom web platform to manage members, events, subscriptions, and administrative workflows. Centralizes operations and improves visibility across the organization.",
+        tags: ["Membership Management", "Events", "Operations"],
+      },
+      {
+        id: 2,
+        title: "E-commerce Website",
+        description: "End-to-end delivery of an online store including product catalog, content administration, and purchasing flows where relevant.",
+        tags: ["E-commerce", "Online Sales", "Content Management"],
+      },
+      {
+        id: 3,
+        title: "Operational Web Application",
+        description: "Business web application to manage clients, facilities, operational workflows, and editable website content. Designed to be fully usable by non-technical staff without touching code.",
+        tags: ["Business Application", "Operations", "CMS"],
+      },
+      {
+        id: 4,
+        title: "Service Tracking & Reporting Tool",
+        description: "Internal application to track operational services and activities, replacing manual processes and spreadsheets with structured data and visibility.",
+        tags: ["Internal Tools", "Process Tracking", "Reporting"],
+      },
+      {
+        id: 5,
+        title: "IT Infrastructure Design & Support",
+        description: "Design and deployment of a complete IT infrastructure, including workstations, servers, peripherals, secure connectivity, and ongoing support.",
+        tags: ["IT Infrastructure", "Support", "Maintenance", "Security"],
+      },
+      {
+        id: 6,
+        title: "Process Digitalization & Consulting",
+        description: "Consulting mission focused on analyzing field operations, reviewing existing tools, and defining a digital solution to reduce time loss and improve efficiency.",
+        tags: ["Consulting", "Process Optimization", "Digitalization"],
+      },
+    ],
+  },
+
+  process: {
+    title: "Process",
+    subtitle: "How we work",
+    steps: [
+      {
+        id: 1,
+        name: "Discovery",
+        description: "Understanding your needs, constraints, and operational context",
+        icon: "Search",
+      },
+      {
+        id: 2,
+        name: "Design",
+        description: "Defining the technical and functional approach",
+        icon: "Layout",
+      },
+      {
+        id: 3,
+        name: "Build",
+        description: "Implementation with structured delivery and quality control",
+        icon: "Code",
+      },
+      {
+        id: 4,
+        name: "Delivery",
+        description: "Deployment, documentation, and handover",
+        icon: "Rocket",
+      },
+      {
+        id: 5,
+        name: "Support",
+        description: "Maintenance, monitoring, and continuous improvement",
+        icon: "LifeBuoy",
+      },
+    ],
+  },
+
+  contact: {
+    title: "Contact",
+    subtitle: "Let's discuss your project",
+    form: {
+      name: "Name",
+      email: "Email",
+      message: "Message",
+      plan: "Service",
+      planPlaceholder: "Select a service (optional)",
+      submit: "Send",
+      sending: "Sending...",
+      success: "Message sent successfully.",
+      error: "An error occurred. Please try again.",
+    },
+    location: "Based in Belgium",
+  },
+
+  navigation: {
+    sections: [
+      { id: "hero", label: "Home" },
+      { id: "about", label: "About" },
+      { id: "services", label: "Services" },
+      { id: "work", label: "Work" },
+      { id: "process", label: "Process" },
+      { id: "contact", label: "Contact" },
+    ],
+  },
+} as const;

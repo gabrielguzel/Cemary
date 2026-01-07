@@ -1,0 +1,252 @@
+export const nl = {
+  hero: {
+    headline: "CEMARY — IT Advies & Digitale Levering",
+    role: "Van strategie tot betrouwbare software. We ontwerpen, bouwen en ondersteunen pragmatische digitale oplossingen.",
+    primaryCta: "Ontdek diensten",
+    secondaryCta: "Start een project",
+  },
+
+  about: {
+    text: `CEMARY is een IT-adviesbureau gevestigd in België, gespecialiseerd in het leveren van betrouwbare en onderhoudbare digitale oplossingen. We helpen organisaties hun systemen structureren, operaties stroomlijnen en complexe vereisten omzetten in duidelijke, bruikbare software. Onze aanpak combineert technische expertise, zakelijk inzicht en pragmatische uitvoering.`,
+    skills: [
+      "Webapplicaties",
+      "Bedrijfssoftware",
+      "Systeemarchitectuur",
+      "IT-infrastructuur",
+      "Procesoptimalisatie",
+    ],
+  },
+
+  services: {
+    title: "Diensten",
+    subtitle: "Flexibele engagementen aangepast aan uw behoeften",
+    plans: [
+      {
+        id: "advisory",
+        name: "IT Advies & Audit",
+        description: "Technische analyse en strategische begeleiding",
+        included: [
+          "Behoefteanalyse en stakeholder interviews",
+          "Beoordeling van bestaande systemen en tools",
+          "Risico- en knelpuntidentificatie",
+          "Actiegerichte verbeteringsroutekaart",
+          "Schriftelijk rapport en aanbevelingen",
+        ],
+        notIncluded: ["Implementatie (optioneel)"],
+        timeline: "1–3 weken",
+        priceRange: "Vanaf €1.500",
+      },
+      {
+        id: "website-essentials",
+        name: "Website Essentials",
+        description: "Een schone, professionele statische website met een afgebakende levering",
+        included: [
+          "Ontdekking en structuurdefinitie (pagina's + navigatie)",
+          "Responsief ontwerp en contentintegratie",
+          "Contactformulier setup (waar relevant)",
+          "Basis performance en SEO fundamenten",
+          "Implementatie en overdracht",
+        ],
+        notIncluded: [
+          "Aangepaste bedrijfsfunctionaliteiten",
+          "Admin panel / geavanceerde content workflows",
+          "Doorlopende ondersteuning (optioneel)",
+        ],
+        timeline: "1–3 weken",
+        priceRange: "Vanaf €1.200",
+      },
+      {
+        id: "website-configured",
+        name: "Website Plus (Geconfigureerde Modules)",
+        description: "Een website met geselecteerde vooraf geconfigureerde functionaliteiten en admin editing",
+        included: [
+          "Website Essentials scope",
+          "Admin editing voor content (nieuws/pagina's) waar relevant",
+          "Vooraf geconfigureerde modules (bijv. evenementen, kalender, formulieren, aankondigingen)",
+          "Configuratie en styling afgestemd op uw merk",
+          "Documentatie en overdracht",
+        ],
+        notIncluded: [
+          "Volledig aangepaste functionaliteitsontwikkeling buiten geselecteerde modules",
+          "Complexe integraties (optioneel)",
+          "Doorlopende ondersteuning (optioneel)",
+        ],
+        timeline: "2–6 weken",
+        priceRange: "Vanaf €2.500",
+      },
+      {
+        id: "custom-build",
+        name: "Aangepaste Bouw (Volledig Aangepast)",
+        description: "Op maat gemaakte webapplicaties en aangepaste functionaliteiten gebouwd volgens uw vereisten",
+        included: [
+          "Bedrijfslogica afgestemd op uw operaties",
+          "Gebruikers- en data management",
+          "Aangepaste operationele workflows (inclusief rapportage waar relevant)",
+          "Integraties en automatisering waar nodig",
+          "Kwaliteitscontrole (testen en review)",
+          "Documentatie en technische overdracht",
+        ],
+        notIncluded: [
+          "Ongedefinieerde of continu veranderende scope (gebruik Retainer in plaats daarvan)",
+          "Lange termijn ondersteuning (optioneel of via Retainer)",
+        ],
+        timeline: "4–12+ weken",
+        priceRange: "Aangepaste offerte",
+      },
+      {
+        id: "retainer",
+        name: "Retainer / Technische Partner",
+        description: "Doorlopende levering met maandelijkse cadans en geprioriteerde respons",
+        included: [
+          "Maandelijkse leveringscadans (functionaliteiten, verbeteringen, fixes)",
+          "Roadmap en prioriteringsondersteuning",
+          "Monitoring en operationele ondersteuning (licht)",
+          "Gedefinieerde responstijden",
+          "Continue verbetering",
+        ],
+        notIncluded: ["Grote eenmalige herbouwen zonder planning"],
+        timeline: "Maandelijks",
+        priceRange: "Aangepaste retainer",
+      },
+      {
+        id: "automation",
+        name: "Interne Tools & Procesondersteuning",
+        description: "Verminder handmatig werk en operationele wrijving",
+        included: [
+          "Procesanalyse",
+          "Aangepaste interne tools",
+          "Workflow automatisering en optimalisatie",
+          "Tracking en rapportage (waar relevant)",
+        ],
+        notIncluded: ["Doorlopende functionaliteitslevering (gebruik Retainer in plaats daarvan)"],
+        timeline: "2–8 weken",
+        priceRange: "Vanaf €2.000",
+      },
+      {
+        id: "infrastructure",
+        name: "IT Infrastructuur & Beheerde Ondersteuning",
+        description: "Ontwerp, installatie en ondersteuning van complete IT-omgevingen",
+        included: [
+          "Infrastructuurbeoordeling en dimensionering",
+          "IT-omgeving setup (apparaten, accounts, permissies, connectiviteit)",
+          "Netwerkconfiguratie en veilige toegang (waar relevant)",
+          "Documentatie en overdracht",
+        ],
+        notIncluded: [],
+        timeline: "Installatie + optionele doorlopende ondersteuning",
+        priceRange: "Aangepaste offerte",
+        note: "Ondersteuningsopties: (1) Maandelijkse beheerde ondersteuning met remote help + on-site interventies en preventief onderhoud, of (2) Vaste prijs installatie met een beperkt post-installatie venster inbegrepen, daarna uurtarief facturering voor interventies.",
+      },
+    ],
+    cta: "Vraag een offerte aan",
+    customNote: "Prijzen zijn gebaseerd op scope en complexiteit. Een gedetailleerde offerte wordt verstrekt na een initiële ontdekkingssessie.",
+  },
+
+  work: {
+    title: "Werk",
+    subtitle: "Representatieve projecten en engagementen",
+    projects: [
+      {
+        id: 1,
+        title: "Leden- & Evenementenbeheerplatform",
+        description: "Aangepast webplatform om leden, evenementen, abonnementen en administratieve workflows te beheren. Centraliseert operaties en verbetert zichtbaarheid in de organisatie.",
+        tags: ["Ledenbeheer", "Evenementen", "Operaties"],
+      },
+      {
+        id: 2,
+        title: "E-commerce Website",
+        description: "End-to-end levering van een online winkel inclusief productcatalogus, contentadministratie en aankoopflows waar relevant.",
+        tags: ["E-commerce", "Online Verkoop", "Contentbeheer"],
+      },
+      {
+        id: 3,
+        title: "Operationele Webapplicatie",
+        description: "Bedrijfswebapplicatie om klanten, faciliteiten, operationele workflows en bewerkbare websitecontent te beheren. Ontworpen om volledig bruikbaar te zijn door niet-technisch personeel zonder code aan te raken.",
+        tags: ["Bedrijfsapplicatie", "Operaties", "CMS"],
+      },
+      {
+        id: 4,
+        title: "Service Tracking & Rapportagetool",
+        description: "Interne applicatie om operationele diensten en activiteiten bij te houden, vervangt handmatige processen en spreadsheets met gestructureerde data en zichtbaarheid.",
+        tags: ["Interne Tools", "Proces Tracking", "Rapportage"],
+      },
+      {
+        id: 5,
+        title: "IT Infrastructuur Ontwerp & Ondersteuning",
+        description: "Ontwerp en implementatie van een complete IT-infrastructuur, inclusief werkstations, servers, randapparatuur, veilige connectiviteit en doorlopende ondersteuning.",
+        tags: ["IT Infrastructuur", "Ondersteuning", "Onderhoud", "Beveiliging"],
+      },
+      {
+        id: 6,
+        title: "Proces Digitalisering & Advies",
+        description: "Adviesmissie gericht op het analyseren van veldoperaties, beoordelen van bestaande tools en definiëren van een digitale oplossing om tijdverlies te verminderen en efficiëntie te verbeteren.",
+        tags: ["Advies", "Procesoptimalisatie", "Digitalisering"],
+      },
+    ],
+  },
+
+  process: {
+    title: "Proces",
+    subtitle: "Hoe we werken",
+    steps: [
+      {
+        id: 1,
+        name: "Ontdekking",
+        description: "Uw behoeften, beperkingen en operationele context begrijpen",
+        icon: "Search",
+      },
+      {
+        id: 2,
+        name: "Ontwerp",
+        description: "De technische en functionele aanpak definiëren",
+        icon: "Layout",
+      },
+      {
+        id: 3,
+        name: "Bouw",
+        description: "Implementatie met gestructureerde levering en kwaliteitscontrole",
+        icon: "Code",
+      },
+      {
+        id: 4,
+        name: "Levering",
+        description: "Implementatie, documentatie en overdracht",
+        icon: "Rocket",
+      },
+      {
+        id: 5,
+        name: "Ondersteuning",
+        description: "Onderhoud, monitoring en continue verbetering",
+        icon: "LifeBuoy",
+      },
+    ],
+  },
+
+  contact: {
+    title: "Contact",
+    subtitle: "Laten we uw project bespreken",
+    form: {
+      name: "Naam",
+      email: "Email",
+      message: "Bericht",
+      plan: "Dienst",
+      planPlaceholder: "Selecteer een dienst (optioneel)",
+      submit: "Verzenden",
+      sending: "Verzenden...",
+      success: "Bericht succesvol verzonden.",
+      error: "Er is een fout opgetreden. Probeer het opnieuw.",
+    },
+    location: "Gevestigd in België",
+  },
+
+  navigation: {
+    sections: [
+      { id: "hero", label: "Home" },
+      { id: "about", label: "Over" },
+      { id: "services", label: "Diensten" },
+      { id: "work", label: "Werk" },
+      { id: "process", label: "Proces" },
+      { id: "contact", label: "Contact" },
+    ],
+  },
+} as const;

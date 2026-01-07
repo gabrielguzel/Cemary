@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { PlanProvider } from "@/contexts/PlanContext";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -36,7 +37,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <PlanProvider>{children}</PlanProvider>
+          <LanguageProvider>
+            <PlanProvider>{children}</PlanProvider>
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

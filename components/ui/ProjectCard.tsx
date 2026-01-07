@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 interface ProjectCardProps {
   title: string;
   description: string;
-  tags: string[];
+  tags: readonly string[];
   delay?: number;
 }
 

@@ -3,24 +3,34 @@
 import { useState } from "react";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { PlanCard } from "@/components/ui/PlanCard";
-import { content } from "@/lib/content";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { usePlan } from "@/contexts/PlanContext";
 import { scrollToSection } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export function Services() {
+  const { t } = useLanguage();
   const { setSelectedPlan } = usePlan();
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handlePlanSelect = (planId: "advisory" | "website-essentials" | "website-configured" | "custom-build" | "retainer" | "automation" | "infrastructure") => {
+  const handlePlanSelect = (
+    planId:
+      | "advisory"
+      | "website-essentials"
+      | "website-configured"
+      | "custom-build"
+      | "retainer"
+      | "automation"
+      | "infrastructure"
+  ) => {
     setSelectedPlan(planId);
     setTimeout(() => {
       scrollToSection("contact");
     }, 100);
   };
 
-  const plans = content.services.plans;
+  const plans = t.services.plans;
   const totalPlans = plans.length;
 
   const nextSlide = () => {
@@ -40,9 +50,11 @@ export function Services() {
       <div className="max-w-7xl mx-auto">
         <AnimatedSection>
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 text-text-primary">{content.services.title}</h2>
+            <h2 className="text-4xl font-bold mb-4 text-text-primary">
+              {t.services.title}
+            </h2>
             <p className="text-lg text-text-secondary">
-              {content.services.subtitle}
+              {t.services.subtitle}
             </p>
           </div>
 
@@ -66,8 +78,23 @@ export function Services() {
                       notIncluded={plans[currentIndex].notIncluded}
                       timeline={plans[currentIndex].timeline}
                       priceRange={plans[currentIndex].priceRange}
-                      note={plans[currentIndex].note}
-                      onSelect={() => handlePlanSelect(plans[currentIndex].id as "advisory" | "website-essentials" | "website-configured" | "custom-build" | "retainer" | "automation" | "infrastructure")}
+                      note={
+                        "note" in plans[currentIndex]
+                          ? plans[currentIndex].note
+                          : undefined
+                      }
+                      onSelect={() =>
+                        handlePlanSelect(
+                          plans[currentIndex].id as
+                            | "advisory"
+                            | "website-essentials"
+                            | "website-configured"
+                            | "custom-build"
+                            | "retainer"
+                            | "automation"
+                            | "infrastructure"
+                        )
+                      }
                     />
                   </div>
                 </motion.div>
@@ -112,9 +139,9 @@ export function Services() {
             </div>
           </div>
 
-          {content.services.customNote && (
+          {t.services.customNote && (
             <p className="text-center text-sm text-text-secondary mt-8 italic">
-              {content.services.customNote}
+              {t.services.customNote}
             </p>
           )}
         </AnimatedSection>

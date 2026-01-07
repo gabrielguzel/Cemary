@@ -3,17 +3,18 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { content } from "@/lib/content";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { scrollToSection } from "@/lib/utils";
 import { cn } from "@/lib/utils";
 
 export function OrbNavigator() {
+  const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
   const overlayRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const sections = content.navigation.sections.map((s) => s.id);
+    const sections = t.navigation.sections.map((s) => s.id);
     const observerOptions = {
       rootMargin: "-20% 0px -70% 0px",
       threshold: 0,
@@ -38,7 +39,7 @@ export function OrbNavigator() {
     return () => {
       observers.forEach((obs) => obs?.disconnect());
     };
-  }, []);
+  }, [t.navigation.sections]);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -136,7 +137,7 @@ export function OrbNavigator() {
             >
               <div className="max-w-2xl w-full">
                 <nav className="space-y-4">
-                  {content.navigation.sections.map((section, idx) => {
+                  {t.navigation.sections.map((section, idx) => {
                     const isActive = activeSection === section.id;
                     return (
                       <motion.button

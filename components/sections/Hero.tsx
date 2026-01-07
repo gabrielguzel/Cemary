@@ -1,10 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { content } from "@/lib/content";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { scrollToSection } from "@/lib/utils";
 
 export function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="hero"
@@ -17,7 +19,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          {content.hero.headline}
+          {t.hero.headline}
         </motion.h1>
         <motion.p
           className="text-xl md:text-2xl text-text-secondary"
@@ -25,7 +27,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          {content.hero.role}
+          {t.hero.role}
         </motion.p>
         <motion.div
           className="flex flex-col sm:flex-row gap-4 justify-center mt-8"
@@ -39,7 +41,7 @@ export function Hero() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            {content.hero.primaryCta}
+            {t.hero.primaryCta}
           </motion.button>
           <motion.button
             onClick={() => scrollToSection("contact")}
@@ -47,7 +49,7 @@ export function Hero() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            {content.hero.secondaryCta}
+            {t.hero.secondaryCta}
           </motion.button>
         </motion.div>
       </div>

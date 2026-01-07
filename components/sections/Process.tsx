@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
-import { content } from "@/lib/content";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Search, Layout, Code, Rocket, LifeBuoy } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -14,20 +14,22 @@ const icons = {
 };
 
 export function Process() {
+  const { t } = useLanguage();
+
   return (
     <section id="process" className="py-20 px-4 bg-surface/30">
       <div className="max-w-6xl mx-auto">
         <AnimatedSection>
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 text-text-primary">{content.process.title}</h2>
+            <h2 className="text-4xl font-bold mb-4 text-text-primary">{t.process.title}</h2>
             <p className="text-lg text-text-secondary">
-              {content.process.subtitle}
+              {t.process.subtitle}
             </p>
           </div>
           <div className="relative">
             <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-accent/30 hidden md:block" />
             <div className="space-y-12">
-              {content.process.steps.map((step, idx) => {
+              {t.process.steps.map((step, idx) => {
                 const Icon = icons[step.icon as keyof typeof icons];
                 return (
                   <motion.div
