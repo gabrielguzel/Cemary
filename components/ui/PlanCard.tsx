@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils";
 interface PlanCardProps {
   name: string;
   description: string;
-  included: string[];
-  notIncluded: string[];
+  included: readonly string[];
+  notIncluded: readonly string[];
   timeline: string;
   priceRange: string;
   onSelect: () => void;
